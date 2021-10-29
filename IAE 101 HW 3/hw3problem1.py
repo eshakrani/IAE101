@@ -142,21 +142,24 @@ class Blackjack():
             for p,v in values:
                 if v == max:
                     winners.append(p) 
+
+            print('_' * 50)
+            print()
             if len(winners) == 1:
                 print("Winner:")
-                print('_' * 50)
                 print(winners[0])
                 print('_' * 50)
             else:
                 print("There was a tie!")
                 print("Winners:")
-                print('_' * 50)
                 for winner in winners:
                     print(winner)
                     print()
                 print('_' * 50)
 
         print()
+        print()
+        print("Final Summary: ")
         print()
 
     # DON'T CHANGE OR REMOVE THIS
