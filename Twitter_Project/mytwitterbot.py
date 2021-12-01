@@ -27,8 +27,11 @@ CONSUMER_SECRET = "luCsdclCIafY3qu1LaWM2OoUpuwZ4tKPIU4AI0Q0UIIDWkriQg"
 def exercise1(api):
     print('10 Tweets from Home Timeline:')
     for tweet in simple_twit.get_home_timeline(api, 10):
-        print(tweet.id, '\n', tweet.author.name, '\n', tweet.author.screen_name,
-        '\n', tweet.created_at, '\n', tweet.full_text, '\n')
+        print('ID:', tweet.id, '\n', 
+        'Author Name:', tweet.author.name, '\n', 
+        'Screen Name:', tweet.author.screen_name, '\n', 
+        'Creation Date:', str(tweet.created_at).split(' ')[0], '\n', 
+        'Full Text:', tweet.full_text, '\n')
  
 
 # Exercise 2 - Get and print 10 tweets from another user's timeline
@@ -38,20 +41,23 @@ def exercise1(api):
 def exercise2(api):
     print('10 Tweets from User IAE101_ckane Timeline:')
     for tweet in simple_twit.get_user_timeline(api, 'IAE101_ckane', 10):
-        print(tweet.id, '\n', tweet.author.name, '\n', tweet.author.screen_name,
-        '\n', tweet.created_at, '\n', tweet.full_text, '\n')
+        print('ID:', tweet.id, '\n', 
+        'Author Name:', tweet.author.name, '\n', 
+        'Screen Name:', tweet.author.screen_name, '\n', 
+        'Creation Date:', str(tweet.created_at).split(' ')[0], '\n', 
+        'Full Text:', tweet.full_text, '\n')
 
 
 # Exercise 3 - Post 1 tweet to your timeline.
 def exercise3(api):
-    s = 'This is a test tweet.\nSeconds since the epoch:' + str(time.time())
+    s = 'This is a test tweet.\nSeconds since the epoch: ' + str(time.time())
     simple_twit.send_tweet(api, s)
 
 
 # Exercise 4 - Post 1 media tweet to your timeline.
 def exercise4(api):
-    s = 'This is a test media tweet.\nSeconds since the epoch:' + str(time.time())
-    simple_twit.send_media_tweet(api, s, r'C:\Users\eshak\OneDrive\Documents\IAE101\Twitter_Project\twitter_logo.jpg')
+    s = 'This is a test media tweet.\nSeconds since the epoch: ' + str(time.time())
+    simple_twit.send_media_tweet(api, s, r'E:\eshak\Documents\College\Year_3\Fall_2021\IAE_101\IAE101\Twitter_Project\twitter_logo.jpg')
 
 # End of Project 04 Exercises
 
@@ -180,10 +186,10 @@ if __name__ == "__main__":
 
     # Once you are satisified that your exercises are completed correctly
     # you may comment out these function calls.
-    # exercise1(api)
-    # exercise2(api)
-    # exercise3(api)
-    # exercise4(api)
+    exercise1(api)
+    exercise2(api)
+    exercise3(api)
+    exercise4(api)
 
     # This is the function call that executes the code you defined above
     # for your twitterbot.
