@@ -57,7 +57,14 @@ def exercise3(api):
 # Exercise 4 - Post 1 media tweet to your timeline.
 def exercise4(api):
     s = 'This is a test media tweet.\nSeconds since the epoch: ' + str(time.time())
-    simple_twit.send_media_tweet(api, s, r'E:\eshak\Documents\College\Year_3\Fall_2021\IAE_101\IAE101\Twitter_Project\twitter_logo.jpg')
+    failed = False
+    try:
+        simple_twit.send_media_tweet(api, s, r'E:\eshak\Documents\College\Year_3\Fall_2021\IAE_101\IAE101\Twitter_Project\twitter_logo.jpg')
+    except Exception as e:
+        failed = True 
+    if failed:
+        simple_twit.send_media_tweet(api, s, r'C:\Users\eshak\OneDrive\Documents\IAE101\Twitter_Project\twitter_logo.jpg')
+    
 
 # End of Project 04 Exercises
 
